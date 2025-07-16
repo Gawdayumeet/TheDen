@@ -1,6 +1,8 @@
-# SPDX-FileCopyrightText: 2024 VMSolidus <evilexecutive@gmail.com>
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 VMSolidus
+# SPDX-FileCopyrightText: 2025 M3739
+# SPDX-FileCopyrightText: 2025 MajorMoth
+# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -15,6 +17,8 @@
       id: LoadoutBackpackSatchelCargo
     - type: loadout
       id: LoadoutBackpackDuffelCargo
+    - type: loadout
+      id: LoadoutBackpackMessengerCargo
 
 #- type: characterItemGroup
 #  id: LoadoutLogisticsBelt
@@ -53,11 +57,13 @@
 #  maxItems: 1
 #  items:
 #
-#- type: characterItemGroup
-#  id: LoadoutLogisticsNeck
-#  maxItems: 1
-#  items:
-#
+- type: characterItemGroup
+  id: LoadoutLogisticsNeck
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutCargoNeckNeckerchief # Floof - M3739 - #988
+
 #- type: characterItemGroup
 #  id: LoadoutLogisticsMask
 #  maxItems: 1

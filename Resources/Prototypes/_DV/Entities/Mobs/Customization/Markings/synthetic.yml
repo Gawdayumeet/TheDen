@@ -1,5 +1,8 @@
-# SPDX-FileCopyrightText: 2025 Falcon <falcon@zigtag.dev>
-# SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Adrian16199
+# SPDX-FileCopyrightText: 2025 Blitz
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 Falcon
+# SPDX-FileCopyrightText: 2025 sleepyyapril
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
 
@@ -133,6 +136,7 @@
   sprites:
   - sprite: Mobs/Customization/eyes.rsi
     state: eyes
+    shader: unshaded
 
 - type: marking
   id: ProtogenMouth
@@ -306,6 +310,15 @@
     state: protogen_snout_bolt_1
   - sprite: _DV/Mobs/Customization/SynthLizIPC/snout_markings.rsi
     state: protogen_snout_bolt_2
+
+- type: marking
+  id: IPCHeadMuzzle
+  bodyPart: Snout
+  markingCategory: Snout
+  speciesRestriction: [IPC]
+  sprites:
+  - sprite: _EE/Mobs/Customization/Tajaran/head.rsi
+    state: muzzle
 
 # Tails
 - type: marking

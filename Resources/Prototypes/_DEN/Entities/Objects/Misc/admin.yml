@@ -1,4 +1,5 @@
-# SPDX-FileCopyrightText: 2025 MajorMoth <61519600+MajorMoth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 BlitzTheSquishy
+# SPDX-FileCopyrightText: 2025 MajorMoth
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -7,7 +8,7 @@
   parent: BoxBase
   name: admin folder
   description: A special folder for more than just paper.
-  suffix: Admin
+  categories: [ AdminTools ]
   components:
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
@@ -43,8 +44,8 @@
   id: AdminToolbelt
   parent: ClothingBeltChiefEngineer
   name: admin toolbelt
-  description: A magical toolbelt that is NOT a shrunken chief engineer's toolbelt.
-  suffix: Admin
+  description: A magical toolbelt that is NOT a bigger chief engineer's toolbelt.
+  categories: [ AdminTools ]
   components:
   - type: Item
     size: Small
@@ -62,7 +63,7 @@
       - id: LightReplacer
       - id: SprayPainter
       - id: GeigerCounter
-      - id: AccessConfigurator
+      - id: AccessConfiguratorUniversal
       - id: AdminRCD
   - type: Storage
     grid:
@@ -74,11 +75,11 @@
   parent: BoxCardboard
   name: admin material box
   description: A box of basic materials.
-  suffix: Admin
+  categories: [ AdminTools ]
   components:
   - type: Item
     size: Normal
-    shape: 
+    shape:
     - 0,0,1,1
   - type: Storage
     maxItemSize: Normal
@@ -98,7 +99,20 @@
   parent: RCD
   name: admin RCD
   description: An RCD with a never-ending supply of compressed matter.
-  suffix: Admin
+  categories: [ AdminTools ]
+  components:
+  - type: LimitedCharges
+    maxCharges: 100
+    charges: 100
+  - type: AutoRecharge
+    rechargeDuration: 0
+
+- type: entity
+  id: AdminRPD
+  parent: RPD
+  name: admin RPD
+  description: An RPD with a never-ending supply of compressed matter.
+  categories: [ AdminTools ]
   components:
   - type: LimitedCharges
     maxCharges: 100
