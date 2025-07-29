@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2022 metalgearsloth
 // SPDX-FileCopyrightText: 2023 Nemanja
 // SPDX-FileCopyrightText: 2024 Tayrtahn
+// SPDX-FileCopyrightText: 2025 Blitz
 // SPDX-FileCopyrightText: 2025 BlitzTheSquishy
 // SPDX-FileCopyrightText: 2025 EctoplasmIsGood
 // SPDX-FileCopyrightText: 2025 VMSolidus
@@ -15,6 +16,8 @@ using Content.Shared.Database;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
 using JetBrains.Annotations;
+using Robust.Shared.Prototypes;
+
 
 namespace Content.Server.Research.Systems;
 
@@ -148,7 +151,8 @@ public sealed partial class ResearchSystem
         }
 
         component.UnlockedTechnologies.Add(technology.ID);
-        var addedRecipes = new List<string>();
+        var addedRecipes = new List<ProtoId<LatheRecipePrototype>>();
+
         foreach (var unlock in technology.RecipeUnlocks)
         {
             if (component.UnlockedRecipes.Contains(unlock))
@@ -157,9 +161,10 @@ public sealed partial class ResearchSystem
             component.UnlockedRecipes.Add(unlock);
             addedRecipes.Add(unlock);
         }
+
         Dirty(uid, component);
 
-        var ev = new TechnologyDatabaseModifiedEvent(addedRecipes, technology.RecipeUnlocks);
+        var ev = new TechnologyDatabaseModifiedEvent(uid, technology.ID, addedRecipes); // Goobstation - Lathe message on recipes update
         RaiseLocalEvent(uid, ref ev);
     }
 
